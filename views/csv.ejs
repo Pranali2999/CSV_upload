@@ -1,0 +1,42 @@
+
+<body>
+    <h1><%= file.originalname %></h1>
+    <!-- Table to Show CSV Data -->
+    <table id="myTable" class="display">
+        <thead>
+            <tr>
+                <% if (tableHeaders.length > 0) { %>
+                    <% for (let i = 0; i < tableHeaders.length; i++) { %>
+                        <th>
+                            <%= tableHeaders[i] %>
+                        </th>
+                    <% } %>
+                <% } else { %>
+                    <th>No data available</th>
+                <% } %>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let row of tableRows) { %>
+                <tr>
+                    <% for (let header of tableHeaders) { %>
+                        <td><%= row[header] %></td>
+                    <% } %>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+
+    <div id="chart_div" style="width: 800px; height: 400px;"></div>
+
+    <!-- Include DataTables JS -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            // Initialize DataTable
+            $('#myTable').DataTable();        
+        });
+    </script>
+</body>
+

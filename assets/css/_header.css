@@ -1,0 +1,26 @@
+.content-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 9vh;
+  background-color: rgb(210, 63, 92);
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  background-color: #070906; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit the color from the parent element */
+}

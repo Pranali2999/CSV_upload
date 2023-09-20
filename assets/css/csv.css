@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Roboto", sans-serif;
+    padding: 0 ;
+    margin-bottom: 30px;
+
+}
+h1{
+    margin: 10px;
+}
+.table{
+  border-collapse: collapse; 
+  min-width: 100%;
+}
+th{
+  background-color: rgb(21, 22, 33);
+  color: aliceblue;
+}
+th,td{
+  border: 1px solid rgb(32, 23, 23);
+  padding: 5px;
+}
+ Add margin to the bottom of the DataTable container */
+#myTable_wrapper {
+margin-bottom: 100px; /* Adjust the margin as needed */
+}

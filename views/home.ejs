@@ -1,0 +1,63 @@
+<body>
+    <div class="content">
+        
+        <!-- Upload Area for Browse/Drag and Drop -->
+        <h3>Upload Files</h3>
+        <div class="upload-box" onclick="handleUploadClick()">
+            <p>Supports CSV files only</p>
+            <h4>Click to Browse or Drag and Drop the Files</h4>
+        </div>
+
+        <!-- Files Container -->
+        <div class="files-container">
+            <div class="files-header">
+                <h3>Files</h3>
+
+            </div>
+
+            <!-- Files -->
+            <table class="files">
+                <thead class="thead">
+                    <tr>
+                        <th>No</th>
+                        <th class="header-1">File Name</th>
+                        <th>Open</th>
+                        <th>Size</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <% for (let i = 0; i < files.length; i++) { %>
+                            <% let sl = i + 1; %>
+                            <% let file = files[i]; %>
+                            <tr>
+                                <td><%= sl %></td>
+                                <td><%= file.originalname %></td>
+                                <td><a href="/view/<%= file._id %>">Open file</a></td>
+                                <td><%= file.size %></td>
+                                <td><a href="/delete/<%= file._id %>">Delete</a></td>
+                            </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+    <!-- Include DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+
+    <!-- Include DataTables JS -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="/assets/js/home.js"></script>
+
+    <!-- Initialize DataTables -->
+    <script>
+        $(document).ready(function () {
+            // Initialize DataTable
+            $('.files').DataTable();
+        });
+    </script>
+</body>
